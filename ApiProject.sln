@@ -9,17 +9,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{E1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDoList", "ToDoList", "{BB057D3F-A485-46D5-9C46-14C14E402EBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelProjectWebApi", "ApiConsume\HotelProjectWebApi\HotelProjectWebApi.csproj", "{81FED1F4-5D88-4401-B926-F14CB3E20C54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelProjectWebApi", "ApiConsume\HotelProjectWebApi\HotelProjectWebApi.csproj", "{81FED1F4-5D88-4401-B926-F14CB3E20C54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelProjectEntityLayer", "ApiConsume\HotelProjectEntityLayer\HotelProjectEntityLayer.csproj", "{90564B09-B14D-4B55-A9ED-D64B1D88DAF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelProjectEntityLayer", "ApiConsume\HotelProjectEntityLayer\HotelProjectEntityLayer.csproj", "{90564B09-B14D-4B55-A9ED-D64B1D88DAF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelProjectDataAccessLayer", "ApiConsume\HotelProjectDataAccessLayer\HotelProjectDataAccessLayer.csproj", "{045D228A-02EC-424F-A39A-0064E5DB27F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelProjectDataAccessLayer", "ApiConsume\HotelProjectDataAccessLayer\HotelProjectDataAccessLayer.csproj", "{045D228A-02EC-424F-A39A-0064E5DB27F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelProjectBusinessLayer", "ApiConsume\HotelProjectBusinessLayer\HotelProjectBusinessLayer.csproj", "{ADAAF1DF-99EB-4AC4-B2B5-483A2F0C3E24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelProjectBusinessLayer", "ApiConsume\HotelProjectBusinessLayer\HotelProjectBusinessLayer.csproj", "{ADAAF1DF-99EB-4AC4-B2B5-483A2F0C3E24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelProjectDtoLayer", "ApiConsume\HotelProjectDtoLayer\HotelProjectDtoLayer.csproj", "{C84EF991-E8E3-4E72-B254-05B43D3A982E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelProjectDtoLayer", "ApiConsume\HotelProjectDtoLayer\HotelProjectDtoLayer.csproj", "{C84EF991-E8E3-4E72-B254-05B43D3A982E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelProjectWebUI", "Frontend\HotelProjectWebUI\HotelProjectWebUI.csproj", "{3A9D29A2-A35D-4FBB-BD50-E3E6110D2916}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelProjectWebUI", "Frontend\HotelProjectWebUI\HotelProjectWebUI.csproj", "{3A9D29A2-A35D-4FBB-BD50-E3E6110D2916}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

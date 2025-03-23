@@ -9,12 +9,12 @@ using HotelProjectDataAccessLayer.Repositories;
 using HotelProjectEntityLayer.Concrete;
 namespace HotelProjectDataAccessLayer.EntityFramework
 {
-    public class EfStaffDal : GenericRepository<Service>, IServicesDal
+    public class EfStaffDal : GenericRepository<Staff>, IStaffDal
     {
 
         public EfStaffDal(Context context) : base(context)
         {
 
         }
-    }
+    }                                                            
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HotelProjectBusinessLayer.Concrete
 {
-    class TestimonialManager : ITestimonialService
+    public class TestimonialManager : ITestimonialService
     {
         private readonly ITestimonialDal _testimonialDal;
 public TestimonialManager(ITestimonialDal testimonialDal)
