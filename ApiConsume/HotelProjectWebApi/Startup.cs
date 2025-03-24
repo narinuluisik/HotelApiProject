@@ -49,6 +49,17 @@ namespace HotelProjectWebApi
             services.AddScoped<ITestimonialDal, EfTestimonialDal>();
             services.AddScoped<ITestimonialService, TestimonialManager>();
 
+            services.AddAutoMapper(typeof(Startup));
+
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("OtelApiCors", opts =>
+                {
+                    opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                });
+            }
+                );
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
 
@@ -68,6 +79,7 @@ namespace HotelProjectWebApi
             }
 
             app.UseRouting();
+            app.UseCors("OtelApiCors");
 
             app.UseAuthorization();
 
