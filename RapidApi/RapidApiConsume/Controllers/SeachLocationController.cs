@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace HotelProjectWebUI.Controllers
+namespace RapidApiConsume.Controllers
 {
-    public class BookingAreaController : Controller
+    public class SeachLocationController : Controller
     {
         public IActionResult Index()
         {
