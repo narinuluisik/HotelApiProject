@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using HotelProjectDataAccessLayer.Concrete;
 using HotelProjectEntityLayer.Concrete;
 using Microsoft.AspNetCore.Builder;
@@ -27,6 +28,7 @@ namespace HotelProjectWebUI
             services.AddDbContext<Context>();
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
             services.AddHttpClient();
+            services.AddControllersWithViews().AddFluentValidation();
             services.AddControllersWithViews();
             services.AddAutoMapper(typeof(Startup));
         }
