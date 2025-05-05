@@ -1,5 +1,6 @@
-﻿using HotelProjectWebUI.Dtos.BookingDto;
+﻿ using HotelProjectWebUI.Dtos.BookingDto;
 using HotelProjectWebUI.Dtos.ContactDto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace HotelProjectWebUI.Controllers
 {
+    [AllowAnonymous]
     public class ContactController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
@@ -37,7 +39,7 @@ namespace HotelProjectWebUI.Controllers
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createContactDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PostAsync("http://localhost:41942/api/Contact", stringContent);
+            var responseMessage = await client.PostAsync("http://localhost:5000/api/Contact", stringContent);
            
                 return RedirectToAction("Index", "Default");
           

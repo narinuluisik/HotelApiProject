@@ -43,7 +43,7 @@ namespace HotelProjectWebUI.Controllers
         {
             var client =_httpClientFactory.CreateClient(); var jsonData = JsonConvert.SerializeObject(model);
             StringContent stringContent=new StringContent(jsonData,Encoding.UTF8,"application/json");
-            var responseMessage = await client.PostAsync("http://localhost:41942/api/Staff", stringContent);
+            var responseMessage = await client.PostAsync("http://localhost:5000/api/Staff", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
@@ -54,7 +54,7 @@ namespace HotelProjectWebUI.Controllers
         {
 
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.DeleteAsync($"http://localhost:41942/api/Staff/{id}");
+            var responseMessage = await client.DeleteAsync($"http://localhost:5000/api/Staff/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
               
@@ -66,7 +66,7 @@ namespace HotelProjectWebUI.Controllers
         public async Task<IActionResult> UpdateStaff(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync($"http://localhost:41942/api/Staff/{id}");
+            var responseMessage = await client.GetAsync($"http://localhost:5000/api/Staff/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -82,7 +82,7 @@ namespace HotelProjectWebUI.Controllers
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(model);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PutAsync($"http://localhost:41942/api/Staff/",stringContent);
+            var responseMessage = await client.PutAsync($"http://localhost:5000/api/Staff/",stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
