@@ -1,10 +1,12 @@
 ﻿using HotelProjectWebUI.Dtos.ContactDto;
 using HotelProjectWebUI.Dtos.SendMessageController;
 using HotelProjectWebUI.Models.Staff;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -12,6 +14,7 @@ using System.Threading.Tasks;
 
 namespace HotelProjectWebUI.Controllers
 {
+    [AllowAnonymous]
     public class AdminContactController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
@@ -21,22 +24,59 @@ namespace HotelProjectWebUI.Controllers
             _httpClientFactory = httpClientFactory;
         }
 
-   
+
         public async Task<IActionResult> InBox()
         {
             var client = _httpClientFactory.CreateClient();
+
             var responseMessage = await client.GetAsync("http://localhost:5000/api/Contact");
+            var responseMessage2 = await client.GetAsync("http://localhost:5000/api/Contact/GetContactCount");
+            var responseMessage3 = await client.GetAsync("http://localhost:5000/api/SendMessage/GetSendMessageCount");
+
+            List<InboxContactDto> values = new List<InboxContactDto>();
+
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<InboxContactDto>>(jsonData);
-                return View(values);
+                values = JsonConvert.DeserializeObject<List<InboxContactDto>>(jsonData);
             }
-            return View();
 
+            if (responseMessage2.IsSuccessStatusCode)
+            {
+                var jsonData2 = await responseMessage2.Content.ReadAsStringAsync();
+                if (int.TryParse(jsonData2, out int contactCount))
+                {
+                    ViewBag.ContactCount = contactCount;
+                }
+                else
+                {
+                    ViewBag.ContactCount = "0";
+                }
+            }
+            else
+            {
+                ViewBag.ContactCount = "0";
+            }
+
+            if (responseMessage3.IsSuccessStatusCode)
+            {
+                var jsonData3 = await responseMessage3.Content.ReadAsStringAsync();
+                if (int.TryParse(jsonData3, out int sendMessageCount))
+                {
+                    ViewBag.SendMessageCount = sendMessageCount;
+                }
+                else
+                {
+                    ViewBag.SendMessageCount = "0";
+                }
+            }
+            else
+            {
+                ViewBag.SendMessageCount = "0";
+            }
+
+            return View(values);
         }
-
-
 
 
         public async Task<IActionResult> SendBox()
@@ -82,8 +122,9 @@ namespace HotelProjectWebUI.Controllers
 
         }
     
-    public  PartialViewResult SideBarAdminContactPartial()
+    public  async Task<PartialViewResult> SideBarAdminContactPartial()
         {
+
             return PartialView();
         }  
         public  PartialViewResult SideBarAdminContactCategoryPartial()
@@ -117,5 +158,22 @@ namespace HotelProjectWebUI.Controllers
             return View();
           
         }
+
+
+        //public async Task<IActionResult>GetContactCount()
+        //{
+        //    var client = _httpClientFactory.CreateClient();
+        //    var responseMessage = await client.GetAsync("http://localhost:5000/api/GetContactCount");
+        //    if (responseMessage.IsSuccessStatusCode)
+        //    {
+        //        var jsonData = await responseMessage.Content.ReadAsStringAsync();
+        //    //    var values = JsonConvert.DeserializeObject<List<InboxContactDto>>(jsonData);
+        //        return View();
+        //    }
+        //    return View();
+
+        //}
+
+
     }
 }

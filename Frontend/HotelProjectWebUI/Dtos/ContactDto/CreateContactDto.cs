@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelProjectEntityLayer.Concrete;
+using System;
 
 namespace HotelProjectWebUI.Dtos.ContactDto
 {
@@ -9,5 +10,7 @@ namespace HotelProjectWebUI.Dtos.ContactDto
         public string Subject { get; set; }
         public string Message { get; set; }
         public DateTime Date { get; set; }
+        public int MessageCategoryID { get; set; }
+ 
     }
 }

@@ -42,5 +42,10 @@ namespace HotelProjectBusinessLayer.Concrete
         {
             _sendMessageDal.Update(t);
         }
+
+        int ISendMessageService.TGetSendMessageCount()
+        {
+           return _sendMessageDal.GetSendMessageCount();
+        }
     }
 }

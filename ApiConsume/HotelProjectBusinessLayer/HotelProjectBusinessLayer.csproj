@@ -22,4 +22,12 @@
     <ProjectReference Include="..\HotelProjectEntityLayer\HotelProjectEntityLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\narinn\source\repos\ApiProject\ApiConsume\HotelProjectBusinessLayer\Abstract\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\narinn\source\repos\ApiProject\ApiConsume\HotelProjectBusinessLayer\Abstract\.editorconfig" />
+  </ItemGroup>
+
 </Project>
