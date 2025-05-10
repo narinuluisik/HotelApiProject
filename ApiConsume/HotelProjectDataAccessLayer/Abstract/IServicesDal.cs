@@ -9,5 +9,6 @@ namespace HotelProjectDataAccessLayer.Abstract
 {
    public  interface IServicesDal :IGenericDal<Service>
     {
+        
     }
 }

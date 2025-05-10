@@ -43,6 +43,11 @@ namespace HotelProjectBusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
+        int IAppUserService.TAppUserCount()
+        {
+           return _appUserDal.AppUserCount();
+        }
+
         List<AppUser> IAppUserService.TUserListWithWorkLocation()
         {
            return _appUserDal.UserListWithWorkLocation();

@@ -9,5 +9,6 @@ namespace HotelProjectDataAccessLayer.Abstract
 {
    public  interface IRoomDal :IGenericDal<Room>
     {
+        int RoomCount();
     }
 }
