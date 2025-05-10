@@ -24,5 +24,6 @@ namespace HotelProjectWebUI.Dtos.RegisterDto
 
         [Required(ErrorMessage = "Şifre tekrar Alanı Gereklidir")]
         public string ConfirmPassword { get; set; }
+  
     }
 }

@@ -68,6 +68,13 @@ namespace HotelProjectWebApi
 
             services.AddScoped<IMessageCategoryDal,EfMessageCategoryDal >();
             services.AddScoped<IMessageCategoryService, MessageCategoryManager>();
+                                                                                            
+            services.AddScoped<IWorkLocationDal,EfWorkLocationDal >();
+            services.AddScoped<IWorkLocationService, WorkLocationManager>();                                                                                                 
+          
+            
+            services.AddScoped<IAppUserDal,EfAppUserDal >();
+            services.AddScoped<IAppUserService, AppUserManager>();
 
             services.AddAutoMapper(typeof(Startup));
 
@@ -80,7 +87,8 @@ namespace HotelProjectWebApi
             }
                 );
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options=>
+            options.SerializerSettings.ReferenceLoopHandling=Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddSwaggerGen(c =>
 
             {

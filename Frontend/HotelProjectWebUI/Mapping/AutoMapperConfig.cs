@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using HotelProjectEntityLayer.Concrete;
 using HotelProjectWebUI.Dtos.AboutDto;
+using HotelProjectWebUI.Dtos.AppUserDto;
 using HotelProjectWebUI.Dtos.BookingDto;
 using HotelProjectWebUI.Dtos.GuestDto;
 using HotelProjectWebUI.Dtos.LoginDto;
@@ -31,6 +32,8 @@ namespace HotelProjectWebUI.Mapping
             CreateMap<ApprovedReservationDto, Booking>().ReverseMap();
             CreateMap<CreateGuestDto,Guest>().ReverseMap();
             CreateMap<UpdateGuestDto,Guest>().ReverseMap();
+
+            CreateMap<ResultAppUserDto,AppUser>().ReverseMap();
         }
     }
 }

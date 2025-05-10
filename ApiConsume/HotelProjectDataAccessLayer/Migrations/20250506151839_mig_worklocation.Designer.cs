@@ -4,14 +4,16 @@ using HotelProjectDataAccessLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HotelProjectDataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20250506151839_mig_worklocation")]
+    partial class mig_worklocation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -95,18 +97,12 @@ namespace HotelProjectDataAccessLayer.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Country")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
-
-                    b.Property<string>("Gender")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
@@ -558,13 +554,11 @@ namespace HotelProjectDataAccessLayer.Migrations
 
             modelBuilder.Entity("HotelProjectEntityLayer.Concrete.AppUser", b =>
                 {
-                    b.HasOne("HotelProjectWebApi.Controllers.WorkLocation", "WorkLocation")
+                    b.HasOne("HotelProjectWebApi.Controllers.WorkLocation", null)
                         .WithMany("AppUsers")
                         .HasForeignKey("WorkLocationID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("WorkLocation");
                 });
 
             modelBuilder.Entity("HotelProjectEntityLayer.Concrete.Contact", b =>

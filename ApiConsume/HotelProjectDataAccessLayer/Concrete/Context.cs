@@ -1,4 +1,5 @@
 ﻿using HotelProjectEntityLayer.Concrete;
+using HotelProjectWebApi.Controllers;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -30,6 +31,7 @@ namespace HotelProjectDataAccessLayer.Concrete
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<SendMessage> SendMessages { get; set; }
         public DbSet<MessageCategory> MessageCategories { get; set; }
+        public DbSet<WorkLocation> WorkLocations { get; set; }
 
     }
 }
