@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Markup;
 
 namespace HotelProjectDataAccessLayer.EntityFramework
 {
@@ -22,6 +23,13 @@ namespace HotelProjectDataAccessLayer.EntityFramework
         {
           var context=new Context();
             return context.Users.Include(x=>x.WorkLocation).ToList();
+        }
+
+       public  List<AppUser> UserListWithWorkLocations()
+        {
+         var context= new Context();
+            var values= context.Users.Include(x => x.WorkLocation).ToList();
+            return values; ;
         }
     }
 }

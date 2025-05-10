@@ -10,5 +10,6 @@ namespace HotelProjectBusinessLayer.Abstract
     public interface IAppUserService   :IGenericService<AppUser>
     {
         List<AppUser> TUserListWithWorkLocation();
+        List<AppUser> TUserListWithWorkLocations();
     }
 }
