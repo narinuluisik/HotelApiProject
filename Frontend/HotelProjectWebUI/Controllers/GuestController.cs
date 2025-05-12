@@ -22,7 +22,7 @@ namespace HotelProjectWebUI.Controllers
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("http://localhost:41942/api/Guest");
+            var responseMessage = await client.GetAsync("http://localhost:5000/api/Guest");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -62,7 +62,7 @@ namespace HotelProjectWebUI.Controllers
         {
 
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.DeleteAsync($"http://localhost:41942/api/Guest/{id}");
+            var responseMessage = await client.DeleteAsync($"http://localhost:5000/api/Guest/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
 
@@ -74,7 +74,7 @@ namespace HotelProjectWebUI.Controllers
         public async Task<IActionResult> UpdateGuest(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync($"http://localhost:41942/api/Guest/{id}");
+            var responseMessage = await client.GetAsync($"http://localhost:5000/api/Guest/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
