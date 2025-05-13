@@ -15,77 +15,107 @@ namespace HotelProjectWebUI.ViewComponents.Dashboard
     {
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            ResultInstagramFollowersDto result = null;
-            var client = new HttpClient();
-            var request = new HttpRequestMessage
+            // Instagram
+            try
             {
-                Method = HttpMethod.Get,
-                RequestUri = new Uri("https://instagram-scraper-20251.p.rapidapi.com/userinfo/?username_or_id=murattycedag"),
-                Headers =
-    {
-        { "x-rapidapi-key", "20f4234472msh6f1aa5d52c53782p16454fjsnf3b656456ff4" },
-        { "x-rapidapi-host", "instagram-scraper-20251.p.rapidapi.com" },
-    },
-            };
-            using (var response = await client.SendAsync(request))
-            {
-                response.EnsureSuccessStatusCode();
-                var body = await response.Content.ReadAsStringAsync();
+                var client = new HttpClient();
+                var request = new HttpRequestMessage
+                {
+                    Method = HttpMethod.Get,
+                    RequestUri = new Uri("https://instagram-scraper-20251.p.rapidapi.com/userinfo/?username_or_id=murattycedag"),
+                    Headers =
+                {
+                    { "x-rapidapi-key", "20f4234472msh6f1aa5d52c53782p16454fjsnf3b656456ff4" },
+                    { "x-rapidapi-host", "instagram-scraper-20251.p.rapidapi.com" },
+                },
+                };
 
-                result = JsonConvert.DeserializeObject<ResultInstagramFollowersDto>(body);
-                ViewBag.v1 = result.data.follower_count;
-                ViewBag.v2 = result.data.following_count;
-             
+                var response = await client.SendAsync(request);
+                if (response.IsSuccessStatusCode)
+                {
+                    var body = await response.Content.ReadAsStringAsync();
+                    var result = JsonConvert.DeserializeObject<ResultInstagramFollowersDto>(body);
+                    ViewBag.v1 = result.data.follower_count;
+                    ViewBag.v2 = result.data.following_count;
+                }
+                else
+                {
+                    ViewBag.v1 = ViewBag.v2 = 0;
+                }
+            }
+            catch
+            {
+                ViewBag.v1 = ViewBag.v2 = 0;
             }
 
-
-
-            ResultTwitterFollowersDto result2= null;
-            var client2 = new HttpClient();
-            var request2 = new HttpRequestMessage
+            // Twitter
+            try
             {
-                
-                Method = HttpMethod.Get,
-                RequestUri = new Uri("https://twitter154.p.rapidapi.com/user/details?username=omarmhaimdat&user_id=96479162"),
-                Headers =
-    {
-        { "x-rapidapi-key", "20f4234472msh6f1aa5d52c53782p16454fjsnf3b656456ff4" },
-        { "x-rapidapi-host", "twitter154.p.rapidapi.com" },
-    },
-            };
-            using (var response2 = await client2.SendAsync(request2))
-            {
-                response2.EnsureSuccessStatusCode();
-                var body = await response2.Content.ReadAsStringAsync();
+                var client2 = new HttpClient();
+                var request2 = new HttpRequestMessage
+                {
+                    Method = HttpMethod.Get,
+                    RequestUri = new Uri("https://twitter154.p.rapidapi.com/user/details?username=omarmhaimdat&user_id=96479162"),
+                    Headers =
+                {
+                    { "x-rapidapi-key", "20f4234472msh6f1aa5d52c53782p16454fjsnf3b656456ff4" },
+                    { "x-rapidapi-host", "twitter154.p.rapidapi.com" },
+                },
+                };
 
-                result2 = JsonConvert.DeserializeObject<ResultTwitterFollowersDto>(body);
-                ViewBag.t1 = result2.follower_count;
-                ViewBag.t2 = result2.following_count;
-          
+                var response2 = await client2.SendAsync(request2);
+                if (response2.IsSuccessStatusCode)
+                {
+                    var body2 = await response2.Content.ReadAsStringAsync();
+                    var result2 = JsonConvert.DeserializeObject<ResultTwitterFollowersDto>(body2);
+                    ViewBag.t1 = result2.follower_count;
+                    ViewBag.t2 = result2.following_count;
+                }
+                else
+                {
+                    ViewBag.t1 = ViewBag.t2 = 0;
+                }
             }
-
+            catch
+            {
+                ViewBag.t1 = ViewBag.t2 = 0;
+            }
 
             // LinkedIn
-            var client3 = new HttpClient();
-            var request3 = new HttpRequestMessage
+            try
             {
-                Method = HttpMethod.Get,
-                RequestUri = new Uri("https://fresh-linkedin-profile-data.p.rapidapi.com/get-linkedin-profile?linkedin_url=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fnarin-ulu%25C4%25B1%25C5%259F%25C4%25B1k-aa7758246%2F&include_skills=false&include_certifications=false&include_publications=false&include_honors=false&include_volunteers=false&include_projects=false&include_patents=false&include_courses=false&include_organizations=false&include_profile_status=false&include_company_public_url=false"),
-                Headers =
+                var client3 = new HttpClient();
+                var request3 = new HttpRequestMessage
+                {
+                    Method = HttpMethod.Get,
+                    RequestUri = new Uri("https://fresh-linkedin-profile-data.p.rapidapi.com/get-linkedin-profile?linkedin_url=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fnarin-ulu%25C4%25B1%25C5%259F%25C4%25B1k-aa7758246%2F&include_skills=false&include_certifications=false"),
+                    Headers =
                 {
                     { "x-rapidapi-key", "20f4234472msh6f1aa5d52c53782p16454fjsnf3b656456ff4" },
                     { "x-rapidapi-host", "fresh-linkedin-profile-data.p.rapidapi.com" },
                 },
-            };
+                };
 
-            var response3 = await client3.SendAsync(request3);
-            response3.EnsureSuccessStatusCode();
-            var body3 = await response3.Content.ReadAsStringAsync();
-            var resultLinkedin = JsonConvert.DeserializeObject<ResultLinkedinFolloweersDto>(body3);
-            ViewBag.l1 = resultLinkedin.data.follower_count;
-            ViewBag.l2 = resultLinkedin.data.connection_count;
+                var response3 = await client3.SendAsync(request3);
+                if (response3.IsSuccessStatusCode)
+                {
+                    var body3 = await response3.Content.ReadAsStringAsync();
+                    var result3 = JsonConvert.DeserializeObject<ResultLinkedinFolloweersDto>(body3);
+                    ViewBag.l1 = result3.data.follower_count;
+                    ViewBag.l2 = result3.data.connection_count;
+                }
+                else
+                {
+                    ViewBag.l1 = ViewBag.l2 = 0;
+                }
+            }
+            catch
+            {
+                ViewBag.l1 = ViewBag.l2 = 0;
+            }
 
             return View();
         }
     }
+
 }

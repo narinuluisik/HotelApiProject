@@ -63,6 +63,18 @@
                                             </td>
                                             <td><i class="fa fa-circle-o text-danger  mr-2"></i>@item.Status</td>
 
+                                        } 
+                                        @if(item.Status=="Müşteri Aranacak")
+                                        {
+                                            <td>
+                                                <div>
+                                                    <div class="progress" style="height: 6px">
+                                                        <div class="progress-bar bg-danger" style="width: 100%"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><i class="fa fa-circle-o text-info  mr-2"></i>@item.Status</td>
+
                                         }
                                   
                                 </tr>
