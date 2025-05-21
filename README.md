@@ -1,4 +1,4 @@
-# 🏨 ASP.NET Core 6 Hotel Rezervasyon Sistemi
+![anaaa](https://github.com/user-attachments/assets/8dfd7ed2-5bbe-4fa4-b623-f6e55e5edbbf)# 🏨 ASP.NET Core 6 Hotel Rezervasyon Sistemi
 
 Bu proje, Murat Yücedağ’ın Udemy'de sunduğu **“Asp.Net Core API - RapidAPI ve API Consume Hotel Rezervasyon Sitesi”** eğitimi kapsamında geliştirilmiştir.
 
@@ -47,7 +47,7 @@ Bu proje, Murat Yücedağ’ın Udemy'de sunduğu **“Asp.Net Core API - RapidA
 - 👥 **Sosyal medya takipçi sayıları** RapidAPI ile API üzerinden çekildi ve gösterildi.
 
 ## 📸 Ekran Görüntüleri
-![hotelire](https://github.com/user-attachments/assets/1fe69391-7dfc-4431-8fe3-eb2804f76a59)
+![anaaa](https://github.com/user-attachments/assets/cd7aebb6-3471-412c-a0f4-7fbe9a1540f4)
 
 ## Dashboard Ekranı
 ![image](https://github.com/user-attachments/assets/1c194aaf-e918-4350-953a-734682792e60)
