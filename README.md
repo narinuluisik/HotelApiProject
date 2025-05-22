@@ -65,7 +65,7 @@ Bu proje, Murat Yücedağ’ın Udemy'de sunduğu **“Asp.Net Core API - RapidA
 
 ## Dashboard Ekranı
 ![image](https://github.com/user-attachments/assets/1c194aaf-e918-4350-953a-734682792e60)
-![Ekran görüntüsü 2025-05-21 123316](https://github.com/user-attachments/assets/6c83c275-ac83-4718-8b73-9f0f34367f91)
+![rezervasyonsooon](https://github.com/user-attachments/assets/8353c394-374e-4383-97d8-d7bdd1c11f99)
 ![Ekran görüntüsü 2025-05-21 123336](https://github.com/user-attachments/assets/56ad14c2-0528-4efd-b9c5-dc066b2d74f1)
 ![Ekran görüntüsü 2025-05-21 123415](https://github.com/user-attachments/assets/75807416-edec-4541-9354-5248241c1af3)
 ![Ekran görüntüsü 2025-05-21 123621](https://github.com/user-attachments/assets/369f5d1f-e996-42c9-b599-463c5c4e451e)
